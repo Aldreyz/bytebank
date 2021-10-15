@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ExtratoComponent implements OnInit {
   //input permite que uma propriedade seja criada para o app-extrato
-  @Input() transferencia:any;
+  @Input() transferencias:any[];
 
   constructor() { }
 

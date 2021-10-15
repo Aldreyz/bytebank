@@ -1,5 +1,9 @@
-<p>Valor: {{transferencia?.valor}}</p>
-<p>Destino: {{transferencia?.destino}}</p>
+<div *ngFor="let transferencia of transferencias">
+  <p>Data: {{transferencia?.data}}</p>
+  <p>Valor: {{transferencia?.valor}}</p>
+  <p>Destino: {{transferencia?.destino}}</p>
+</div>
+
 
 <!--{{valor}} esta sendo interpolado -->
 <!--? = value para pegar oque esta nos determinados campos-->
