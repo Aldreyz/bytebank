@@ -1,5 +1,7 @@
 <section class="container">
-  <form class="formulario">
+  <!--ngSubmit desparado sempre que houver um submit-->
+  <!--ngSubmit aciona metodo transferir-->
+  <form class="formulario" (ngSubmit)="transferir()">
   <h2 class="formulario__titulo">Nova Transferencia</h2>
 
   <div class="form-field">
