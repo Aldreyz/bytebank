@@ -2,10 +2,8 @@
  (aoTransferir)="transferir($event)"
 ></app-nova-transferencia>
 
-<app-extrato></app-extrato>
+<app-extrato [transferencia]="transferencia"></app-extrato>
 
-<!--{{valor}} esta sendo interpolado -->
-<!--? = value para pegar oque esta nos determinados campos-->
-<p>Valor: {{transferencia?.valor}}</p>
-<p>Destino: {{transferencia?.destino}}</p>
+
+
 

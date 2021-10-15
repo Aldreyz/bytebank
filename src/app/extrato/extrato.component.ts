@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-extrato',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./extrato.component.scss']
 })
 export class ExtratoComponent implements OnInit {
+  //input permite que uma propriedade seja criada para o app-extrato
+  @Input() transferencia:any;
 
   constructor() { }
 
