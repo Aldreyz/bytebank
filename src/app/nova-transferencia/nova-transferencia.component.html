@@ -6,12 +6,13 @@
 
   <div class="form-field">
      <label class="form-field__label" for="valor">Valor </label>
-     <input class="form-field__input"  id="valor" type="number">
+     <input class="form-field__input"  id="valor" type="number" [(ngModel)]="valor" name="valor">
   </div>
+  <!--ngModel sem () espera receber string-->
 
   <div class="form-field">
     <label class="form-field__label" for="destino">Destino </label>
-    <input class="form-field__input" id="destino" type="number">
+    <input class="form-field__input" id="destino" type="text" [(ngModel)]="destino" name="destino">
   </div>
 
   <div class="botao-wrapper">
