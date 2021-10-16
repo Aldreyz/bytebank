@@ -1,5 +1,6 @@
 import { TransferenciaService } from './../services/transferencia.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { Transferencia } from '../models/transferencia.model';
 
 @Component({
   selector: 'app-extrato',
@@ -13,7 +14,16 @@ export class ExtratoComponent implements OnInit {
   constructor(private service: TransferenciaService) { }
 
   ngOnInit(): void {
-    this.transferencias =this.service.transferencias;
+    /*faz chamada para o banco de dados (db.json) atraves da url
+      http://localhost:3000/transferencias, que retorna a lista de transferencias
+      a ser mostrada na tela.
+    */
+    this.service.todas().subscribe((transferencias : Transferencia[])=>{
+      console.table(transferencias);
+
+      // colocando transferencias que chegou do json para minha variavel a ser mostrada na tela.
+      this.transferencias = transferencias;
+    });
   }
 
 }
