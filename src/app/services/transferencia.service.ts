@@ -1,8 +1,7 @@
+import { Transferencia } from './../models/transferencia.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Transferencia } from '../models/transferencia.model';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -21,14 +20,13 @@ export class TransferenciaService {
 
   todas(): Observable<Transferencia[]>{
     // chamando url que acessa todas transferencias no banco.
-    return this.httpClient.get<Transferencia[]>(this.url)
+    return this.httpClient.get<Transferencia[]>(this.url);
   }
 
-  adicionar(transferencia:any){
+  adicionar(transferencia:Transferencia): Observable<Transferencia>{
     this.hidratar(transferencia);
 
-    this.listaTransferencia.push(transferencia);
-    //transferencias vai adicionar atraves do metodo push um evento
+    return this.httpClient.post<Transferencia>(this.url, transferencia);
   }
 
   private hidratar(transferencia:any){
